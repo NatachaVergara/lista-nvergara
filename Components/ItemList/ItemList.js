@@ -1,12 +1,17 @@
 
+import { useState } from 'react';
 import { SafeAreaView, View, StyleSheet, Text, FlatList, TouchableOpacity, Button } from 'react-native';
 
 
-
 const ItemList = ({ itemList, setItemList }) => {
+    const [done, setDone] = useState(false)
 
     const onDelete = (id) => {
         setItemList(itemList.filter(i => i.id !== id))
+    }
+    const onDone = () => {
+        setDone(!done)
+
     }
 
     return (
@@ -16,16 +21,14 @@ const ItemList = ({ itemList, setItemList }) => {
                 renderItem={data => (
                     <TouchableOpacity
                         onPress={() => { }} style={styles.inputContainer}>
-
-                        <Text style={styles.textInput}>  {data.item.value}
-
-
+                        <Text
+                            style={styles.textInput}>
+                            {data.item.value}
                         </Text>
                         <Button
                             title={'Borrar'}
                             onPress={() => onDelete(data.item.id)}
                         />
-
                     </TouchableOpacity>
                 )}
                 keyExtractor={item => item.id}
@@ -39,9 +42,9 @@ export default ItemList
 
 const styles = StyleSheet.create({
     inputContainer: {
-        width: '80%',
-        marginLeft: 20,
-        marginRight: 20,
+        width: '90%',
+        marginLeft: 10,
+        marginRight: 5,
         marginTop: 20,
         borderColor: 'black',
         borderWidth: 2,
@@ -54,7 +57,6 @@ const styles = StyleSheet.create({
     },
     textInput: {
         color: 'red',
-        width: 'auto'
-
+        width: 'auto',
     }
 })

@@ -1,8 +1,9 @@
 
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import InputSearch from '../InputSearch/InputSearch';
-import ItemList from '../ItemList/ItemList';
+import Header from '../Header';
+import AddItem from '../AddItem';
+import ItemList from '../ItemList';
 
 const ListContainer = () => {
     const [textItem, setTextItem] = useState('')
@@ -11,8 +12,8 @@ const ListContainer = () => {
     return (
 
         <View style={styles.container}>
-            
-            <InputSearch
+            <Header/>
+            <AddItem
                 textItem={textItem}
                 setTextItem={setTextItem}
                 setItemList={setItemList}

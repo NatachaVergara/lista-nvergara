@@ -1,6 +1,6 @@
 import { Button, TextInput, View, StyleSheet } from 'react-native'
 
-const InputSearch = ({ textItem, setTextItem, setItemList }) => {
+const AddItem = ({ textItem, setTextItem, setItemList }) => {
     const onHandleChangeText = (text) => setTextItem(text)
 
     const onHandlePressAddItem = () => {
@@ -28,7 +28,7 @@ const InputSearch = ({ textItem, setTextItem, setItemList }) => {
     )
 }
 
-export default InputSearch
+export default AddItem
 
 const styles = StyleSheet.create({
     inputContainer: {
