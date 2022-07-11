@@ -1,21 +1,34 @@
 
 import { useState } from 'react';
 import { SafeAreaView, View, StyleSheet, Text, FlatList, TouchableOpacity, Button } from 'react-native';
+import ModalDelete from '../ModalDelete';
 
 
 const ItemList = ({ itemList, setItemList }) => {
-    const [done, setDone] = useState(false)
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const onDeleteModal = () => {
+        setModalVisible(!modalVisible)
+    }
 
     const onDelete = (id) => {
         setItemList(itemList.filter(i => i.id !== id))
-    }
-    const onDone = () => {
-        setDone(!done)
-
-    }
+        setModalVisible(!modalVisible)
+      }
 
     return (
+
         <SafeAreaView>
+            <ModalDelete
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+                itemList={itemList}
+                setItemList={setItemList}
+                onDelete={onDelete}
+
+
+            />
             <FlatList
                 data={itemList}
                 renderItem={data => (
@@ -27,7 +40,7 @@ const ItemList = ({ itemList, setItemList }) => {
                         </Text>
                         <Button
                             title={'Borrar'}
-                            onPress={() => onDelete(data.item.id)}
+                            onPress={onDeleteModal}
                         />
                     </TouchableOpacity>
                 )}
