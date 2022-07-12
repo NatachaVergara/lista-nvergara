@@ -11,7 +11,7 @@ const AddItem = ({ textItem, setTextItem, setItemList }) => {
     return (
         <View style={styles.inputContainer} >
             <TextInput
-                placeholder={'Escriba Aqui'}
+                placeholder={'Tarea'}
                 value={textItem}
                 onChangeText={onHandleChangeText}
                 style={styles.textInput}
