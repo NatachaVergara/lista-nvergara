@@ -9,7 +9,7 @@ const ItemList = ({ itemList, setItemList }) => {
     const [id, setId] = useState(null)
     const [nomTarea, setNomTarea] = useState('')
     const [modalVisible, setModalVisible] = useState(false);
-    const [done, setDone] = useState(false);
+    // const [done, setDone] = useState(false);
 
     const onOpenModal = (dataId, nomTarea) => {
         setModalVisible(!modalVisible)
@@ -48,7 +48,7 @@ const ItemList = ({ itemList, setItemList }) => {
                             style={
                                 [
                                     styles.textInput,
-                                    done && styles.done
+                                    // done && styles.done
                                 ]}>
                             {data.item.value}
 
@@ -61,7 +61,7 @@ const ItemList = ({ itemList, setItemList }) => {
                                 onPress={() => onOpenModal(data.item.id, data.item.value)}>
                                 <Text>🗑️</Text>
                             </Pressable >
-{/* 
+                            {/* 
 
                             <Pressable
                                 style={styles.btnDone}
@@ -90,12 +90,14 @@ const styles = StyleSheet.create({
         marginRight: 5,
         marginTop: 20,
         borderColor: 'black',
-        borderWidth: 2,
+        borderWidth: 1,
         borderStyle: 'solid',
         padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#ffff',
+        borderRadius: 10
 
     },
     textInput: {

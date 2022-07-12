@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+       
     },
     textInput: {
         width: '80%',
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderStyle: 'solid',
         borderWidth: 1,
-        borderRadius: 20
+        borderRadius: 20,
+        backgroundColor: '#ffff'
     }, button: {
         color:"#1E6738"
     }

@@ -16,10 +16,12 @@ export default Header
 const styles = StyleSheet.create({
   titulo: {
     width: 'auto',
-    margin: 20,
-    padding: 20,
+    margin: 15,
+    padding: 15,
     textAlign: 'center',
-    fontSize: 20
+    fontSize: 30,
+    color: 'red',
+    fontWeight: 'bold',
 
 
   }
