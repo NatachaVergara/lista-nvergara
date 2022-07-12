@@ -3,7 +3,7 @@ import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 
 const ModalDelete = ({ modalVisible, setModalVisible, onDelete, nomTarea }) => {
 
-  
+
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -18,13 +18,24 @@ const ModalDelete = ({ modalVisible, setModalVisible, onDelete, nomTarea }) => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>¿Seguro que quiere eliminar esta tarea: {nomTarea} ?</Text>
-            
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={onDelete}
-            >
-              <Text style={styles.textStyle}>Eliminar</Text>
-            </Pressable>
+
+            <View style={styles.pressable}>
+
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={onDelete}
+              >
+                <Text style={styles.textStyle}>Eliminar</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.textStyle}>Cancelar</Text>
+              </Pressable>
+
+            </View>
+
           </View>
         </View>
       </Modal>
@@ -56,10 +67,16 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5
   },
+  pressable: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: "center",
+  },
   button: {
     borderRadius: 20,
     padding: 10,
-    elevation: 2
+    elevation: 2,
+    margin:10
   },
   buttonOpen: {
     backgroundColor: "#F194FF",

@@ -19,9 +19,10 @@ const AddItem = ({ textItem, setTextItem, setItemList }) => {
             />
             <Button
                 style={styles.button}
-                title='+'
+                title='➕'
                 onPress={onHandlePressAddItem}
                 disabled={textItem.length < 1 ? true : false}
+                // color="#ffff"
 
             />
         </View>
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 20
     }, button: {
-        backgroundColor: 'red'
+        color:"#1E6738"
     }
 
 
