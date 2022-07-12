@@ -1,7 +1,5 @@
-
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import Header from '../Header';
 import AddItem from '../AddItem';
 import ItemList from '../ItemList';
 
@@ -12,8 +10,7 @@ const ListContainer = () => {
     return (
 
         <View style={styles.container}>
-            <Header/>
-            <AddItem
+           <AddItem
                 textItem={textItem}
                 setTextItem={setTextItem}
                 setItemList={setItemList}
@@ -34,6 +31,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         margin: 'auto',
-        marginTop: '40%'
+        marginTop: '10%'
     }
 });

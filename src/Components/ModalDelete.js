@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 
-const ModalDelete = ({ modalVisible, setModalVisible, onDelete }) => {
+const ModalDelete = ({ modalVisible, setModalVisible, onDelete, nomTarea }) => {
 
   
   return (
@@ -17,13 +17,13 @@ const ModalDelete = ({ modalVisible, setModalVisible, onDelete }) => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>¿Seguro que quiere eliminar esta tarea?</Text>
+            <Text style={styles.modalText}>¿Seguro que quiere eliminar esta tarea: {nomTarea} ?</Text>
             
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={onDelete}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Eliminar</Text>
             </Pressable>
           </View>
         </View>

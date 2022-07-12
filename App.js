@@ -1,12 +1,10 @@
-
-import { StyleSheet, Text, View } from 'react-native';
-
-import ListContainer from './Components/ListContainer';
+import { StyleSheet, View } from 'react-native';
+import Home from './src/Views/Home';
 
 export default function App() {
   return (
-    <View style={styles.container}>    
-      <ListContainer />
+    <View style={styles.container}>
+      <Home />
     </View>
   );
 }
